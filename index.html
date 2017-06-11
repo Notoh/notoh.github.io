@@ -1,0 +1,190 @@
+<!doctype html>
+<!--suppress CssUnknownTarget -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Notoh</title>
+        <meta name="description" content="My portfolio">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="NOD.jpg">
+
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+            @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+            * {
+                margin:0;
+                padding:0;
+            }
+
+            body {
+                font-family: "Noto Serif", serif;
+                font-size: 21px;
+                background: #ecf0f1;
+            }
+
+            h2,h3{
+                font-family: 'Roboto Slab',serif;
+            }
+
+            .section-empty {
+                background: #FFF;
+            }
+
+            .section-light {
+                background: #FFECC9;
+            }
+            .section-dark {
+                background: #FFC04C;
+                background: -webkit-linear-gradient(top,#8B0000,#ff0000);
+                background: -o-linear-gradient(top,#8B0000,#ff0000);
+                background: -moz-linear-gradient(top,#8B0000,#ff0000);
+                background: linear-gradient(top,#8B0000,#ff0000);
+                color: #FFF;
+            }
+            .section-light a {
+                color: #50A4AD;
+            }
+            .section-empty a {
+                color: #3C8D96;
+            }
+            .section-dark a {
+                color: #89cfd7;
+            }
+            .section-wrapper {
+                min-width: 500px;
+                max-width: 950px;
+                padding: 50px;
+                margin: 0 auto;
+            }
+            .header-with-spacing {
+                margin-top: 20px;
+            }
+            a {
+                text-decoration: none;
+                -webkit-transition: opacity 0.125s;
+                transition: opacity 0.125s;
+            }
+            a:hover {
+                opacity: 0.75;
+            }
+            p {
+                margin-top: 15px;
+            }
+            p > a > i.fa {
+                font-size: 42px;
+            }
+            #friendly-icons-target {
+                background: rgb(53, 52, 50);
+                color: #FFC04C;
+                display: none;
+                border-radius: 3px;
+                padding: 10px;
+                margin-top: 10px;
+                font-size: 18px;
+                position: fixed;
+            }
+
+
+            td {
+                vertical-align: top;
+                padding-top: 15px;
+            }
+            h1 {
+                text-shadow: 0px 1px 1px #000;
+            }
+            .column {
+                display: inline-block;
+            }
+            .column-left {
+                float: left;
+            }
+            .column-right {
+                float: right;
+            }
+            .column-wrapper {
+                overflow: auto;
+            }
+            .social-dock > a {
+                font-size: 42px;
+                color: #FFF;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="section section-dark">
+            <div style ="width:1px; height:50px;"></div>
+            <div class="section-wrapper column-wrapper">
+                <div class="column column-left">
+                    <h1>Notoh</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-empty">
+            <div class="section-wrapper">
+                <table>
+                    <tr>
+
+                        <td></td>
+
+                        <td>
+                            <h2 style="margin-top: -8px;">Alex Pawelko</h2>
+
+                            <p>I'm a Canadian who codes probably more than is healthy, and I play games for both fun and competition.</p>
+                            <p>I'm currently in high school right now, but my dream job is to work at Hypixel and maybe other game dev companies in the future.</p>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section section-light">
+
+            <div class="section-wrapper">
+
+                <h3>My Favourite Projects</h3>
+
+                <p>
+
+                    <em><a href="https://github.com/notoh/dynamicac" target="_blank">DynamicAC</a></em> is my Anticheat for Spigot 1.8, loosely inspired by the old AntiCheat plugin for Bukkit.<br/>
+                    <em><a href="https://github.com/notoh/pokemans" target="_blank">Pokemans</a></em> is a school project to make a text-based Pokemon on the arduino. <br />
+                    <em><a href="https://github.com/notoh/rankedcvc" target="_blank">RankedCvC</a></em> is a Ranked Client for the hypixel minigame Cops vs Crims. <br />
+                    <em><a href="https://github.com/notoh/DennlsDOTExe" target="_blank">Dennls.EXE</a></em>, my meme hacked client. <br />
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="friendly-icons-target"></div>
+
+        <script type="text/javascript">
+            var elements = document.getElementsByTagName('*');
+            var container = document.getElementById('friendly-icons-target');
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                if (element.getAttribute('friendly-icons-text')) {
+                    (function(element) {
+                        element.onmouseover = function() {
+                            var offset = element.getBoundingClientRect();
+                            container.innerHTML = element.getAttribute('friendly-icons-text');
+                            container.style.display = 'inline-block';
+                            container.style.left = offset.left + offset.width / 2 - (container.getBoundingClientRect().width / 2) + 'px';
+                            container.style.top = (offset.bottom - 10) + 'px';
+                        };
+                        element.onmouseout = function() {
+                            container.style.display = 'none';
+                        };
+                    }(element));
+                }
+            }
+        </script>
+    </body>
+</html>
